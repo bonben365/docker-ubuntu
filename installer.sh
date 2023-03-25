@@ -14,3 +14,5 @@ sudo chmod a+r /etc/apt/keyrings/docker.gpg
 sudo apt-get update
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+docker run -e APPLICATION_KEY=79d00bf1-79fd-4dfd-9491-98d383fb1d74 otohits/app:latest
+
