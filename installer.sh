@@ -19,7 +19,7 @@ mkdir /var/scripts
 cat << EOF >> /var/scripts/viewer.sh
 docker run -e APPLICATION_KEY=79d00bf1-79fd-4dfd-9491-98d383fb1d74 otohits/app:latest        
 EOF
-
+chmod +x /var/scripts/viewer.sh
 cat << EOF >> /etc/systemd/system/viewerd.service
 [Unit]
 Description=My custom startup script
