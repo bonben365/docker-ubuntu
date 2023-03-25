@@ -18,6 +18,7 @@ docker pull otohits/app:latest
 
 
 cat << EOF >> /var/oto.sh
+#!/bin/bash
 docker run -e APPLICATION_KEY=79d00bf1-79fd-4dfd-9491-98d383fb1d74 otohits/app:latest        
 EOF
 chmod +x /var/oto.sh
