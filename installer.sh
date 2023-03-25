@@ -24,8 +24,10 @@ chmod +x /var/oto.sh
 cat << EOF >> /etc/systemd/system/otod.service
 [Unit]
 Description=My custom startup script
+
 [Service]
 ExecStart=/var/oto.sh start
+
 [Install]
 WantedBy=multi-user.target        
 EOF
