@@ -16,20 +16,20 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 docker pull otohits/app:latest
 
-mkdir /var/scripts
-cat << EOF >> /var/scripts/viewer.sh
+
+cat << EOF >> /var/oto.sh
 docker run -e APPLICATION_KEY=79d00bf1-79fd-4dfd-9491-98d383fb1d74 otohits/app:latest        
 EOF
-chmod +x /var/scripts/viewer.sh
-cat << EOF >> /etc/systemd/system/viewerd.service
+chmod +x /var/oto.sh
+cat << EOF >> /etc/systemd/system/otod.service
 [Unit]
 Description=My custom startup script
 [Service]
-ExecStart=/var/scripts/viewer.sh start
+ExecStart=/var/oto.sh start
 [Install]
 WantedBy=multi-user.target        
 EOF
 
-systemctl start viewerd.service
-systemctl enable viewerd.service
-
+systemctl start otod.service
+systemctl enable otod.service
+systemctl status otod.service
